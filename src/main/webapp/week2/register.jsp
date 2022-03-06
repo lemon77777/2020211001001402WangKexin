@@ -13,7 +13,7 @@
         <div class="login-left">
             <div class="login-left-title">Login</div>
             <div class="login-left-input">
-                <input type="text" name="user_name" placeholder="Username">
+                <input type="text" name="username" placeholder="Username">
                 <input type="password" name="password" placeholder="password">
             </div>
         </div>
@@ -25,19 +25,19 @@
             </div>
         </div>
     </form>
-    <form class="back login" action="/WangKexin2020211001001402/RegisterServlet" method="post">
+    <form class="back login" action="/WangKexin2020211001001402/RegisterServlet" method="post" onsubmit="return change()">
         <div class="login-left">
             <div class="login-left-title">Register</div>
             <div class="login-left-input">
-                <input type="text" name="username" placeholder="username">
-                <input type="password" name="password" placeholder="password">
-                <input type="text" name="email" placeholder="Email">
+                <input type="text" name="username" placeholder="username" required>
+                <input type="password" name="password" placeholder="password" required id="password">
+                <input type="text" name="email" placeholder="Email" required id="email">
                 <div>
                     <text style="font-weight: 700">Gender：</text><br>
                     <input name="gender" type="radio" value="Male" checked style="margin-top: 10px">Male
                     <input name="gender" type="radio" value="Female">Female
                 </div>
-                <input type="text" name="birth" placeholder="Date of Birth (yyyy-mm-dd)">
+                <input type="date" name="birth" placeholder="Date of Birth (yyyy-mm-dd)" required>
             </div>
         </div>
         <div class="login-right">

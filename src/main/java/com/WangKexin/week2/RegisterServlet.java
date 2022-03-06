@@ -39,9 +39,10 @@ public class RegisterServlet extends HttpServlet {
             userMapper.add(user);
             sqlSession.commit();
             sqlSession.close();
+            response.sendRedirect("/WangKexin2020211001001402/week2/register.jsp");
         }else {
             response.setContentType("text/html;charset=UTF-8");
-            response.getWriter().write("用户名已存在！");
+            response.getWriter().write("注册失败！用户名已存在！");
         }
     }
 
