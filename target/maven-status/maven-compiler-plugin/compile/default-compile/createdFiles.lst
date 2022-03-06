@@ -1,1 +1,6 @@
 com\example\WangKexin2020211001001402\HelloServlet.class
+com\WangKexin\week2\HelloWordServlet.class
+com\WangKexin\week2\RegisterServlet.class
+com\WangKexin\week2\LoginServlet.class
+com\WangKexin\week2\mapper\UserMapper.class
+com\WangKexin\week2\pojo\User.class
