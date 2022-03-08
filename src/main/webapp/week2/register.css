@@ -132,3 +132,7 @@ body {
         left: 50%;
     }
 }
+.change::placeholder {
+    color: red;
+    font-size: 7px;
+}

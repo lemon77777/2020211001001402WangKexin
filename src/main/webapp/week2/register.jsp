@@ -25,7 +25,7 @@
             </div>
         </div>
     </form>
-    <form class="back login" action="/WangKexin2020211001001402/RegisterServlet" method="post" onsubmit="return change()">
+    <form class="back login" action="/WangKexin2020211001001402/Register" method="post" onsubmit="return change()">
         <div class="login-left">
             <div class="login-left-title">Register</div>
             <div class="login-left-input">
@@ -37,7 +37,7 @@
                     <input name="gender" type="radio" value="Male" checked style="margin-top: 10px">Male
                     <input name="gender" type="radio" value="Female">Female
                 </div>
-                <input type="date" name="birth" placeholder="Date of Birth (yyyy-mm-dd)" required>
+                <input type="text" name="birth" placeholder="Date of Birth (yyyy-mm-dd)" required id="birth">
             </div>
         </div>
         <div class="login-right">
