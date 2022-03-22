@@ -79,6 +79,7 @@ public class RegisterServlet extends HttpServlet {
                         +"<td>"+rs.getString("birth")+"</td></tr>"
                         );
             }
+            writer.println("/table");
         } catch (SQLException e) {
             e.printStackTrace();
             writer.println("注册失败！");
