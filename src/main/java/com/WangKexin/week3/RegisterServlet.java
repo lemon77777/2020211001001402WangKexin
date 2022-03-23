@@ -64,6 +64,7 @@ public class RegisterServlet extends HttpServlet {
             ps.setString(3,email);
             ps.setString(4,gender);
             ps.setString(5,birth);
+            System.out.println(ps);
             ps.executeUpdate();
             sql.setLength(0);
             sql.append("select * from user");
@@ -79,7 +80,7 @@ public class RegisterServlet extends HttpServlet {
                         +"<td>"+rs.getString("birth")+"</td></tr>"
                         );
             }
-            writer.println("/table");
+            writer.println("</table>");
         } catch (SQLException e) {
             e.printStackTrace();
             writer.println("注册失败！");
