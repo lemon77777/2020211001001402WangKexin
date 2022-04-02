@@ -51,4 +51,7 @@
     <param-name>password</param-name>
     <param-value>wkx074527</param-value>
   </context-param>
+  <listener>
+    <listener-class>com.WangKexin.week6.JDBCServletContextListener</listener-class>
+  </listener>
 </web-app>

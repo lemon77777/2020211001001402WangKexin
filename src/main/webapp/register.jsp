@@ -1,7 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="header.jsp"%>
-<p style="margin-left: 30px">This is my register JSP page </p>
-<div class="register">
+<div class="box">
+    <p>This is my register JSP page </p>
+    <% if (!(request.getAttribute("fail") ==null)){
+        out.println("<h5 style='color:red;'>"+request.getAttribute("fail")+"</h5>");
+    }%>
     <form class="register" action="/WangKexin2020211001001402/Register" method="post" onsubmit="return change()">
         <div class="register-content">
             <div class="register-content-title">Register</div>

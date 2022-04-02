@@ -1,8 +1,10 @@
 com\example\WangKexin2020211001001402\HelloServlet.class
-com\WangKexin\week2\HelloWordServlet.class
+com\WangKexin\week6\JDBCServletContextListener.class
 com\WangKexin\week4\ConfigDemoServlet.class
 com\WangKexin\week2\RegisterServlet.class
+com\WangKexin\week6\SearchServlet.class
 com\WangKexin\week2\LoginServlet.class
+com\WangKexin\week2\HelloWordServlet.class
 com\WangKexin\week2\mapper\UserMapper.class
 com\WangKexin\week3\LifeCycleServlet.class
 com\WangKexin\week5\LoginServlet.class
