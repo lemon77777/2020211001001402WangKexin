@@ -9,7 +9,7 @@
 </head>
 <body>
 <div id="login" class="login">
-    <form class="front login" action="/WangKexin2020211001001402/LoginServlet" method="post">
+    <form class="front login" action="../LoginServlet" method="post">
         <div class="login-left">
             <div class="login-left-title">Login</div>
             <div class="login-left-input">
@@ -25,7 +25,7 @@
             </div>
         </div>
     </form>
-    <form class="back login" action="/WangKexin2020211001001402/RegisterServlet" method="post" onsubmit="return change()">
+    <form class="back login" action="../RegisterServlet" method="post" onsubmit="return change()">
         <div class="login-left">
             <div class="login-left-title">Register</div>
             <div class="login-left-input">

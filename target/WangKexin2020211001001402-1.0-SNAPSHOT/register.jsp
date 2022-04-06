@@ -2,7 +2,10 @@
 <%@include file="header.jsp"%>
 <div class="box">
     <p>This is my register JSP page </p>
-    <form class="register" action="/WangKexin2020211001001402/Register" method="post" onsubmit="return change()">
+    <% if (!(request.getAttribute("fail") ==null)){
+        out.println("<h5 style='color:red;'>"+request.getAttribute("fail")+"</h5>");
+    }%>
+    <form class="register" action="Register" method="post" onsubmit="return change()">
         <div class="register-content">
             <div class="register-content-title">Register</div>
             <div class="register-content-input">

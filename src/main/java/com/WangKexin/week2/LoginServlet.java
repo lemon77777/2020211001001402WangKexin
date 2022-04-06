@@ -31,9 +31,14 @@ public class LoginServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter writer = response.getWriter();
         if (user != null) {
-            writer.write("登录成功！");
+            writer.write("登录成功！<br>");
+            writer.write("username:" + user.getUsername() + "<br>");
+            writer.write("password:" + user.getPassword() + "<br>");
+            writer.write("email:" + user.getEmail() + "<br>");
+            writer.write("gender:" + user.getGender() + "<br>");
+            writer.write("birthDate:" + user.getBirth() + "<br>");
         }else {
-            writer.write("登录失败");
+            writer.write("登录失败！");
         }
     }
 

@@ -12,4 +12,5 @@
 <a href="register.jsp">Register JDBC-week4</a><br/>
 <a href="include.jsp">include-week5</a><br/>
 <a href="login.jsp">Login-week5</a>
+<a href="index.jsp">search-week6</a>
 <%@include file="footer.jsp"%>

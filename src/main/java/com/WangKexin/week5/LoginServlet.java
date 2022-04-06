@@ -1,13 +1,14 @@
 package com.WangKexin.week5;
 
-import javax.servlet.ServletContext;
+import com.WangKexin.dao.UserDao;
+import com.WangKexin.model.Users;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.*;
 
 @WebServlet("/login")
@@ -33,7 +34,20 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        PrintWriter writer = response.getWriter();
+        UserDao userDao = new UserDao();
+        try {
+            Users users = userDao.findByUsernamePassword(con,username,password);
+            if (users != null) {
+                request.setAttribute("user", users);
+                request.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(request,response);
+            } else {
+                request.setAttribute("message","Username or Password Error!");
+                request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        /*PrintWriter writer = response.getWriter();
         StringBuilder sql = new StringBuilder();
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -44,8 +58,8 @@ public class LoginServlet extends HttpServlet {
             ps.setString(2,password);
             rs = ps.executeQuery();
             if (rs.next()) {
-                /*writer.println("<h1>Login Success!!!</h1>");
-                writer.println("<h1>Welcome&nbsp" + username+"</h1>");*/
+                *//*writer.println("<h1>Login Success!!!</h1>");
+                writer.println("<h1>Welcome&nbsp" + username+"</h1>");*//*
                 request.setAttribute("id",rs.getInt("id"));
                 request.setAttribute("username",rs.getString("username"));
                 request.setAttribute("password",rs.getString("password"));
@@ -56,8 +70,8 @@ public class LoginServlet extends HttpServlet {
                 return;
             }
             else {
-               /* writer.println("<h1>Login Fail!!!</h1>");
-                writer.println("<h1>username or password error!</h1>");*/
+               *//* writer.println("<h1>Login Fail!!!</h1>");
+                writer.println("<h1>username or password error!</h1>");*//*
                request.setAttribute("message","Username or Password Error!");
                request.getRequestDispatcher("login.jsp").forward(request,response);
             }
@@ -84,6 +98,7 @@ public class LoginServlet extends HttpServlet {
                 e.printStackTrace();
             }
         }
+        */
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

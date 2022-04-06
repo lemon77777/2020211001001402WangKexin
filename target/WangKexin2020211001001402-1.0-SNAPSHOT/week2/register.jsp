@@ -9,7 +9,7 @@
 </head>
 <body>
 <div id="login" class="login">
-    <form class="front login" action="/WangKexin2020211001001402/LoginServlet" method="post">
+    <form class="front login" action="../LoginServlet" method="post">
         <div class="login-left">
             <div class="login-left-title">Login</div>
             <div class="login-left-input">
