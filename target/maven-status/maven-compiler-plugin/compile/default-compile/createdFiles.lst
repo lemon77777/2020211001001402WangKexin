@@ -4,13 +4,16 @@ com\WangKexin\week4\ConfigDemoServlet.class
 com\WangKexin\week2\RegisterServlet.class
 com\WangKexin\week6\SearchServlet.class
 com\WangKexin\week2\LoginServlet.class
+com\WangKexin\controller\UpdateUserServlet.class
 com\WangKexin\dao\IUserDao.class
 com\WangKexin\dao\UserDao.class
 com\WangKexin\week2\HelloWordServlet.class
+com\WangKexin\controller\LoginServlet.class
 com\WangKexin\model\Users.class
 com\WangKexin\controller\HomeServlet.class
 com\WangKexin\week2\mapper\UserMapper.class
 com\WangKexin\week3\LifeCycleServlet.class
 com\WangKexin\week5\LoginServlet.class
+com\WangKexin\controller\LogoutServlet.class
 com\WangKexin\week2\pojo\User.class
 com\WangKexin\week3\RegisterServlet.class

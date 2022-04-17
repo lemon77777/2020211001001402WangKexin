@@ -29,7 +29,7 @@ public class UserDao implements IUserDao {
     }
 
     public int updateUser(Connection con, Users users) throws SQLException {
-        PreparedStatement ps = con.prepareStatement("update table user set username = ?,password = ?,email = ?,gender = ?,birth = ? where id = ?");
+        PreparedStatement ps = con.prepareStatement("update user set username = ?,password = ?,email = ?,gender = ?,birth = ? where id = ?");
         ps.setString(1, users.getUsername());
         ps.setString(2, users.getPassword());
         ps.setString(3, users.getEmail());

@@ -5,13 +5,11 @@ import com.WangKexin.model.Users;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.sql.*;
 
-@WebServlet("/login")
+@WebServlet("/loginWeek5")
 public class LoginServlet extends HttpServlet {
     Connection con = null;
     @Override
@@ -31,14 +29,37 @@ public class LoginServlet extends HttpServlet {
         }*/
         con = (Connection) getServletContext().getAttribute("con");
     }
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         UserDao userDao = new UserDao();
         try {
             Users users = userDao.findByUsernamePassword(con,username,password);
             if (users != null) {
-                request.setAttribute("user", users);
+                //use cookie for session
+                /*Cookie c = new Cookie("sessionId",""+users.getId());
+                c.setMaxAge(10*60);
+                response.addCookie(c);*/
+                //add code for remember me
+                String rememberMe = request.getParameter("rememberMe");
+                if (rememberMe!=null && rememberMe.equals("1")) {
+                    Cookie usernameCookie = new Cookie("cUsername",users.getUsername());
+                    Cookie passwordCookie = new Cookie("cPassword",users.getPassword());
+                    Cookie rememberMeCookie = new Cookie("cRememberMe",rememberMe);
+                    usernameCookie.setMaxAge(5);//only for test --- otherwise set 60*60*24*15
+                    passwordCookie.setMaxAge(5);
+                    rememberMeCookie.setMaxAge(5);
+                    response.addCookie(usernameCookie);
+                    response.addCookie(passwordCookie);
+                    response.addCookie(rememberMeCookie);
+                }
+                //use httpSession for session
+                HttpSession session = request.getSession();//create session if session not exist -- otherwise return existing session
+                System.out.println("sessionId --->"+session.getId());//check
+                session.setMaxInactiveInterval(10);
+                //change request(one page) to session -- can get session attribute in many jsp
+                session.setAttribute("user",users);
+                //request.setAttribute("user", users);
                 request.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(request,response);
             } else {
                 request.setAttribute("message","Username or Password Error!");
@@ -101,8 +122,8 @@ public class LoginServlet extends HttpServlet {
         */
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        this.doGet(request, response);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
     }
     @Override
     public void destroy() {
