@@ -30,7 +30,8 @@ public class UpdateUserServlet extends HttpServlet {
         String email = request.getParameter("email");
         String gender = request.getParameter("gender");
         String birth = request.getParameter("birth");
-        Users users = new Users();
+        HttpSession session = request.getSession();
+        Users users = (Users)session.getAttribute("user");
         users.setId(Integer.parseInt(id));
         users.setUsername(username);
         users.setPassword(password);
@@ -41,10 +42,11 @@ public class UpdateUserServlet extends HttpServlet {
         try {
             int update = userDao.updateUser(con,users);
             if (update == 0) {
-                HttpSession session = request.getSession();//create session if session not exist -- otherwise return existing session
-                session.setMaxInactiveInterval(10);
+                //HttpSession session = request.getSession();//create session if session not exist -- otherwise return existing session
+                //session.setMaxInactiveInterval(10);
+
                 //change request(one page) to session -- can get session attribute in many jsp
-                session.setAttribute("user",users);
+                //session.setAttribute("user",users);
                 request.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(request,response);
             }
             else {
