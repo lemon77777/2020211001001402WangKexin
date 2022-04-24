@@ -48,9 +48,17 @@
       <%
           if (session.getAttribute("user")!=null) {
       %>
-   <br> <a href="logout">Logout</a>
+      <br>
+      <a href="logout">Logout</a>
+      <br>
+      <a href="#">My Cart</a><br/>
       <% } %>
-  <br><a href="#">My Cart</a><br/>
-<a href="register.jsp">Register Here</a>
+      <%
+          if (session.getAttribute("user") == null) {
+      %>
+      <a href="register.jsp">Register Here</a>
+      <%
+          }
+      %>
   </td></tr>
  </table>

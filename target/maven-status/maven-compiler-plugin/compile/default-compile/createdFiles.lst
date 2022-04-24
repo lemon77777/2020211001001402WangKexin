@@ -14,6 +14,8 @@ com\WangKexin\controller\HomeServlet.class
 com\WangKexin\week2\mapper\UserMapper.class
 com\WangKexin\week3\LifeCycleServlet.class
 com\WangKexin\week5\LoginServlet.class
+com\WangKexin\filter\AdminAuthenticationFilter.class
+com\WangKexin\filter\FrontEndAuthenticationFilter.class
 com\WangKexin\controller\LogoutServlet.class
 com\WangKexin\week2\pojo\User.class
 com\WangKexin\week3\RegisterServlet.class

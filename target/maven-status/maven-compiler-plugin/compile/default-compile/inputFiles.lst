@@ -8,9 +8,11 @@ D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\example\Wang
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\controller\LoginServlet.java
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\dao\UserDao.java
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\week6\SearchServlet.java
+D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\filter\AdminAuthenticationFilter.java
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\week2\HelloWordServlet.java
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\week3\RegisterServlet.java
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\week3\LifeCycleServlet.java
+D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\filter\FrontEndAuthenticationFilter.java
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\dao\IUserDao.java
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\model\Users.java
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\week5\LoginServlet.java
