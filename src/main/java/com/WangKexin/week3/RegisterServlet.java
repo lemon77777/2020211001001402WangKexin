@@ -32,7 +32,7 @@ public class RegisterServlet extends HttpServlet {
         }*/
        con = (Connection) getServletContext().getAttribute("con");
     }
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
@@ -59,7 +59,7 @@ public class RegisterServlet extends HttpServlet {
                 writer.println("<h1>username already exists!</h1>");
                 return;*/
                 request.setAttribute("fail","username already exists!");
-                request.getRequestDispatcher("register.jsp").forward(request,response);
+                request.getRequestDispatcher("WEB-INF/views/register.jsp").forward(request,response);
                return;
             }
             sql.setLength(0);
@@ -71,7 +71,7 @@ public class RegisterServlet extends HttpServlet {
             ps.setString(4,gender);
             ps.setString(5,birth);
             ps.executeUpdate();
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login");
             //sql.setLength(0);
             //sql.append("select * from user");
             //ps = con.prepareStatement(sql.toString());
@@ -93,7 +93,7 @@ public class RegisterServlet extends HttpServlet {
             //writer.println("注册失败！");
             //writer.println("<h1>register fail!</h1>");
             request.setAttribute("fail","register fail!");
-            request.getRequestDispatcher("register.jsp").forward(request,response);
+            request.getRequestDispatcher("WEB-INF/views/register.jsp").forward(request,response);
         }
         finally {
             try {
@@ -117,8 +117,8 @@ public class RegisterServlet extends HttpServlet {
         }
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        this.doGet(request, response);
+    protected void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("WEB-INF/views/register.jsp").forward(request,response);
     }
     @Override
     public void destroy() {

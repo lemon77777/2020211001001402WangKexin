@@ -1,39 +1,50 @@
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="header.jsp"%>
-<div class="box">
-    <p>This is my login JSP page </p>
-    <% if (!(request.getAttribute("message") ==null)){
-        out.println("<h5 style='color:red;'>"+request.getAttribute("message")+"</h5>");
-    }%>
-    <%
-        Cookie [] allCookies = request.getCookies();//give all cookies
-        String username = "",password = "",rememberMe = "";
-        if (allCookies!=null) {
-            for (Cookie c : allCookies) {
-                if (c.getName().equals("cUsername")) {
-                    username = c.getValue();
-                }
-                if (c.getName().equals("cPassword")) {
-                    password = c.getValue();
-                }
-                if (c.getName().equals("cRememberMe")) {
-                    rememberMe = c.getValue();
-                }
+<section id="form"><!--form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-1">
+					<div class="login-form"><!--login form-->
+					<h2>Login to your account</h2>	<%
+    if(!(request.getAttribute("message")==null)){
+    out.println("<h2>"+request.getAttribute("message")+"</h2>");
+}%>
+<%
+    Cookie[] cookies=request.getCookies();
+    String username="";
+    String password="";
+    String rememberMe="";
+    if (cookies!=null){
+        for (Cookie cookie:cookies){
+            if (cookie.getName().equals("cUsername")){
+                username=cookie.getValue();
+            }
+            if (cookie.getName().equals("cPassword")){
+                password=cookie.getValue();
+            }
+            if (cookie.getName().equals("cRememberMe")){
+                rememberMe=cookie.getValue();
             }
         }
-    %>
-    <form class="register" action="login" method="post" onsubmit="return change()">
-        <div class="register-content">
-            <div class="register-content-title">Login</div>
-            <div class="register-content-input">
-                <input type="text" name="username" placeholder="username" required value="<%=username%>">
-                <input type="password" name="password" placeholder="password" required id="password" value="<%=password%>">
-                <div style="height: 30px; display: flex; flex-direction: row;justify-content: center;margin-top: 20px;margin-bottom: 0">
-                    <input type="checkbox" value="1" name="rememberMe" <%=rememberMe.equals("1")?"checked":""%> checked style="width: 20px">Remember me
-                </div>
-                <input type="submit" value="Sign in" style="border: 0; background: none; outline: none; margin-top: 0;color: #000000;font-weight: 700;">
-            </div>
-        </div>
-    </form>
-</div>
+    }
+    //update 5 user basepath
+%>
+
+<form method="post" action="<%=request.getContextPath()+"/login"%>">
+    <input type="text" name="username" placeholder="Username" value="<%=username%>"><br>
+   <input type="password" name="password" placeholder="password" value="<%=password%>">
+    <br/>
+    <span>
+		<input type="checkbox" class="checkbox" name="rememberMe" value="1" <%="1".equals(rememberMe)? "checked":""%>/> Keep me signed in
+   </span>
+    <button type="submit" class="btn btn-default">Login</button>
+</form>	
+					</div><!--/login form-->
+				</div>
+				
+				
+			</div>
+		</div>
+	</section><!--/form-->
 <%@include file="footer.jsp"%>
