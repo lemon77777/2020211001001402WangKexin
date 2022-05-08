@@ -101,7 +101,7 @@ public class UserDao implements IUserDao {
         ps.setString(1,password);
         ResultSet rs = ps.executeQuery();
         Users users = null;
-        if (rs.next()) {
+        while (rs.next()) {
             users = new Users();
             users.setId(rs.getInt("id"));
             users.setUsername(rs.getString("username"));
@@ -137,7 +137,7 @@ public class UserDao implements IUserDao {
         ps.setString(1,gender);
         ResultSet rs = ps.executeQuery();
         Users users = null;
-        if (rs.next()) {
+        while (rs.next()) {
             users = new Users();
             users.setId(rs.getInt("id"));
             users.setUsername(rs.getString("username"));
@@ -155,7 +155,7 @@ public class UserDao implements IUserDao {
         ps.setString(1,birth.toString());
         ResultSet rs = ps.executeQuery();
         Users users = null;
-        if (rs.next()) {
+        while (rs.next()) {
             users = new Users();
             users.setId(rs.getInt("id"));
             users.setUsername(rs.getString("username"));
