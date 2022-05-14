@@ -47,15 +47,15 @@
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Registration!</h2>
 						
-<%if(!(request.getAttribute("message")==null)){
-    out.println("<h3>"+request.getAttribute("message")+"</h3>");
+<%if(!(request.getAttribute("fail")==null)){
+    out.println("<h3>"+request.getAttribute("fail")+"</h3>");
 }%>
-<form method="post" action="register">
+<form method="post" action="Register">
     <input type="text" name="username" placeholder="Username" />  <input type="password" name="password" placeholder="password" />   <input type="text" name="email" placeholder="Email">
  <label> Gender </label><span> &nbsp;<input type="radio" 
 style="width: 15px; height: 15px; display:inline;" name="gender" value="male" checked/>&nbsp;Male&nbsp;<input type="radio" style="width: 15px; height: 15px;   display: inline;" name="gender" value="female"/>&nbsp;Female</span>
    <span></span>
-   <input type="text" name="birthdate" placeholder="Date of Birth (yyyy-mm-dd)">
+   <input type="text" name="birth" placeholder="Date of Birth (yyyy-mm-dd)">
     <button type="submit" class="btn btn-default">Register</button>
 </form>
 					</div><!--/sign up form-->

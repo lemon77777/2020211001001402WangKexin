@@ -41,3 +41,4 @@
         <td style="border: #0019ff 1px solid;"><a href="updateUser" style="text-decoration: none; color: #0019ff">Update User</a></td>
     </tr>
 </table>
+<%@include file="footer.jsp"%>

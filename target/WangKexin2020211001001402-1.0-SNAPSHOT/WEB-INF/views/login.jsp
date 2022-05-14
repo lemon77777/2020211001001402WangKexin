@@ -31,12 +31,12 @@
     //update 5 user basepath
 %>
 
-<form method="post" action="<%=basePath+"login"%>">
+<form method="post" action="<%=request.getContextPath()+"/login"%>">
     <input type="text" name="username" placeholder="Username" value="<%=username%>"><br>
    <input type="password" name="password" placeholder="password" value="<%=password%>">
     <br/>
     <span>
-		<input type="checkbox" class="checkbox" name="remember" value="1" <%="1".equals(rememberMe)? "checked":""%>/> Keep me signed in
+		<input type="checkbox" class="checkbox" name="rememberMe" value="1" <%="1".equals(rememberMe)? "checked":""%>/> Keep me signed in
    </span>
     <button type="submit" class="btn btn-default">Login</button>
 </form>	

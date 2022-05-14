@@ -3,6 +3,7 @@ package com.WangKexin.dao;
 import com.WangKexin.model.Product;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDao implements  IProductDao{
@@ -75,7 +76,6 @@ public class ProductDao implements  IProductDao{
             product = new Product();
             product.setProductID(rs.getInt("ProductID"));
             product.setProductName(rs.getString("ProductName"));
-            product.setPicture(rs.getBlob("Picture").getBinaryStream());
             product.setPrice(rs.getDouble("Price"));
             product.setProductDescription(rs.getString("ProductDescription"));
             product.setCategoryID(rs.getInt("CategoryID"));
@@ -85,93 +85,138 @@ public class ProductDao implements  IProductDao{
 
     @Override
     public List<Product> findByCategoryId(int categoryID, Connection con) throws SQLException {
-        String sql = "select * from product where CategoryID = ?";
-        PreparedStatement pt = con.prepareStatement(sql);
-        pt.setInt(1, categoryID);
-        ResultSet rs = pt.executeQuery();
-        Product productList = null;
-        while (rs.next()){
-            productList = new Product();
-            productList.setProductID(rs.getInt("ProductID"));
-            productList.setProductName(rs.getString("ProductName"));
-            productList.setPicture(rs.getBlob("Picture").getBinaryStream());
-            productList.setPrice(rs.getDouble("Price"));
-            productList.setProductDescription(rs.getString("ProductDescription"));
-            productList.setCategoryID(rs.getInt("CategoryID"));
+        List<Product> list = new ArrayList<Product>();
+        try {
+            String sql = "select * from product where CategoryID = ?";
+            PreparedStatement pt = con.prepareStatement(sql);
+            pt.setInt(1, categoryID);
+            ResultSet rs = pt.executeQuery();
+            while (rs.next()){
+                Product product = new Product();
+                product.setProductID(rs.getInt("ProductID"));
+                product.setProductName(rs.getString("ProductName"));
+                product.setPicture(rs.getBlob("Picture").getBinaryStream());
+                product.setPrice(rs.getDouble("Price"));
+                product.setProductDescription(rs.getString("ProductDescription"));
+                product.setCategoryID(rs.getInt("CategoryID"));
+                list.add(product);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return (List<Product>) productList;
+
+        return list;
     }
 
     @Override
     public List<Product> findByPrice(double minPrice, double maxPrice, Connection con) throws SQLException {
-        String sql = "select * from product where Price >="+minPrice+" and Price <="+maxPrice;
-        PreparedStatement pt = con.prepareStatement(sql);
-        ResultSet rs = pt.executeQuery();
-        Product productList = null;
-        while (rs.next()){
-            productList = new Product();
-            productList.setProductID(rs.getInt("ProductID"));
-            productList.setProductName(rs.getString("ProductName"));
-            productList.setPicture(rs.getBlob("Picture").getBinaryStream());
-            productList.setPrice(rs.getDouble("Price"));
-            productList.setProductDescription(rs.getString("ProductDescription"));
-            productList.setCategoryID(rs.getInt("CategoryID"));
+        List<Product> list = new ArrayList<Product>();
+        try {
+            String sql = "select * from product where Price >="+minPrice+" and Price <="+maxPrice;
+            PreparedStatement pt = con.prepareStatement(sql);
+            ResultSet rs = pt.executeQuery();
+            Product productList = null;
+            while (rs.next()){
+                productList = new Product();
+                productList.setProductID(rs.getInt("ProductID"));
+                productList.setProductName(rs.getString("ProductName"));
+                productList.setPicture(rs.getBlob("Picture").getBinaryStream());
+                productList.setPrice(rs.getDouble("Price"));
+                productList.setProductDescription(rs.getString("ProductDescription"));
+                productList.setCategoryID(rs.getInt("CategoryID"));
+                list.add(productList);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return (List<Product>) productList;
+
+        return list;
     }
 
     @Override
     public List<Product> findAll(Connection con) throws SQLException {
-        String sql = "select * from product";
-        PreparedStatement pt = con.prepareStatement(sql);
-        ResultSet rs = pt.executeQuery();
-        Product productList = null;
-        while (rs.next()){
-            productList = new Product();
-            productList.setProductID(rs.getInt("ProductID"));
-            productList.setProductName(rs.getString("ProductName"));
-            productList.setPicture(rs.getBlob("Picture").getBinaryStream());
-            productList.setPrice(rs.getDouble("Price"));
-            productList.setProductDescription(rs.getString("ProductDescription"));
-            productList.setCategoryID(rs.getInt("CategoryID"));
+        List<Product> list = new ArrayList<Product>();
+        try{
+            String sql = "select * from product";
+            PreparedStatement pt = con.prepareStatement(sql);
+            ResultSet rs = pt.executeQuery();
+            Product productList = null;
+            while (rs.next()){
+                productList = new Product();
+                productList.setProductID(rs.getInt("ProductID"));
+                productList.setProductName(rs.getString("ProductName"));
+                productList.setPrice(rs.getDouble("Price"));
+                productList.setProductDescription(rs.getString("ProductDescription"));
+                productList.setCategoryID(rs.getInt("CategoryID"));
+                list.add(productList);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return (List<Product>) productList;
+
+        return list;
     }
 
+    public byte[] getPictureById(Integer productID, Connection con) throws SQLException {
+        byte[] imgByte = null;
+        String sql = "select picture from product where productID = ?";
+        PreparedStatement pt = con.prepareStatement(sql);
+        pt.setInt(1,productID);
+        ResultSet rs = pt.executeQuery();
+        while (rs.next()) {
+            Blob blob = rs.getBlob("picture");
+            imgByte = blob.getBytes(1,(int)blob.length());
+        }
+        return imgByte;
+    }
     @Override
     public List<Product> findByProductName(String productName, Connection con) throws SQLException {
-        String sql = "select * from product where ProductName like '%+"+productName+"%'";
-        PreparedStatement pt = con.prepareStatement(sql);
-        ResultSet rs = pt.executeQuery();
-        Product productList = null;
-        while (rs.next()){
-            productList = new Product();
-            productList.setProductID(rs.getInt("ProductID"));
-            productList.setProductName(rs.getString("ProductName"));
-            productList.setPicture(rs.getBlob("Picture").getBinaryStream());
-            productList.setPrice(rs.getDouble("Price"));
-            productList.setProductDescription(rs.getString("ProductDescription"));
-            productList.setCategoryID(rs.getInt("CategoryID"));
+        List<Product> list = new ArrayList<Product>();
+        try {
+            String sql = "select * from product where ProductName like '%+"+productName+"%'";
+            PreparedStatement pt = con.prepareStatement(sql);
+            ResultSet rs = pt.executeQuery();
+            Product productList = null;
+            while (rs.next()){
+                productList = new Product();
+                productList.setProductID(rs.getInt("ProductID"));
+                productList.setProductName(rs.getString("ProductName"));
+                productList.setPicture(rs.getBlob("Picture").getBinaryStream());
+                productList.setPrice(rs.getDouble("Price"));
+                productList.setProductDescription(rs.getString("ProductDescription"));
+                productList.setCategoryID(rs.getInt("CategoryID"));
+                list.add(productList);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return (List<Product>) productList;
+
+        return list;
     }
 
     @Override
     public List<Product> getPicture(Integer productID, Connection con) throws SQLException {
-        String sql = "select * from product where ProductID = ?";
-        PreparedStatement pt = con.prepareStatement(sql);
-        pt.setInt(1, productID);
-        ResultSet rs = pt.executeQuery();
-        Product productList = null;
-        while (rs.next()){
-            productList = new Product();
-            productList.setProductID(rs.getInt("ProductID"));
-            productList.setProductName(rs.getString("ProductName"));
-            productList.setPicture(rs.getBlob("Picture").getBinaryStream());
-            productList.setPrice(rs.getDouble("Price"));
-            productList.setProductDescription(rs.getString("ProductDescription"));
-            productList.setCategoryID(rs.getInt("CategoryID"));
+        List<Product> list = new ArrayList<Product>();
+        try {
+            String sql = "select * from product where ProductID = ?";
+            PreparedStatement pt = con.prepareStatement(sql);
+            pt.setInt(1, productID);
+            ResultSet rs = pt.executeQuery();
+            Product productList = null;
+            while (rs.next()){
+                productList = new Product();
+                productList.setProductID(rs.getInt("ProductID"));
+                productList.setProductName(rs.getString("ProductName"));
+                productList.setPicture(rs.getBlob("Picture").getBinaryStream());
+                productList.setPrice(rs.getDouble("Price"));
+                productList.setProductDescription(rs.getString("ProductDescription"));
+                productList.setCategoryID(rs.getInt("CategoryID"));
+                list.add(productList);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return (List<Product>) productList;
+
+        return list;
     }
 }
