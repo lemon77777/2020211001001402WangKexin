@@ -1,11 +1,13 @@
 com\WangKexin\week2\RegisterServlet.class
 com\WangKexin\model\Category.class
 com\WangKexin\controller\productDetailServlet.class
+com\WangKexin\model\Item.class
 com\WangKexin\controller\UpdateUserServlet.class
 com\WangKexin\controller\AddProductServlet.class
 com\WangKexin\dao\IUserDao.class
 com\WangKexin\controller\GetImgServlet.class
 com\WangKexin\dao\IProductDao.class
+com\WangKexin\controller\UserListServlet.class
 com\WangKexin\week2\HelloWordServlet.class
 com\WangKexin\controller\LoginServlet.class
 com\WangKexin\model\Users.class
@@ -24,8 +26,11 @@ com\WangKexin\week4\ConfigDemoServlet.class
 com\WangKexin\week6\SearchServlet.class
 com\WangKexin\controller\AdminHomeServlet.class
 com\WangKexin\week2\LoginServlet.class
+com\WangKexin\controller\CartServlet.class
+com\WangKexin\Lab1\countServlet.class
 com\WangKexin\dao\UserDao.class
 com\WangKexin\controller\ShopServlet.class
 com\WangKexin\dao\ProductDao.class
+com\WangKexin\Lab1\LifeCycleServlet.class
 com\WangKexin\controller\LogoutServlet.class
 com\WangKexin\week2\pojo\User.class

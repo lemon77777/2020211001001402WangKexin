@@ -1,0 +1,13 @@
+0:0:0:0:0:0:0:1 - - [16/May/2022:15:29:10 +0800] "GET /WangKexin2020211001001402 HTTP/1.1" 302 - http-bio-8080-exec-2 0
+0:0:0:0:0:0:0:1 - - [16/May/2022:15:29:10 +0800] "GET /WangKexin2020211001001402 HTTP/1.1" 302 - http-bio-8080-exec-3 0
+0:0:0:0:0:0:0:1 - - [16/May/2022:15:29:10 +0800] "GET /WangKexin2020211001001402/ HTTP/1.1" 200 16239 http-bio-8080-exec-4 155
+0:0:0:0:0:0:0:1 - - [16/May/2022:15:29:11 +0800] "GET /WangKexin2020211001001402/ HTTP/1.1" 200 16239 http-bio-8080-exec-1 71
+0:0:0:0:0:0:0:1 - - [16/May/2022:15:29:11 +0800] "GET /WangKexin2020211001001402/css/bootstrap.min.css HTTP/1.1" 200 101112 http-bio-8080-exec-5 5
+0:0:0:0:0:0:0:1 - - [16/May/2022:15:29:11 +0800] "GET /WangKexin2020211001001402/css/main.css HTTP/1.1" 304 - http-bio-8080-exec-7 9
+0:0:0:0:0:0:0:1 - - [16/May/2022:15:29:11 +0800] "GET /WangKexin2020211001001402/images/home/logo.png HTTP/1.1" 200 2899 http-bio-8080-exec-8 200
+0:0:0:0:0:0:0:1 - - [16/May/2022:15:29:11 +0800] "GET /WangKexin2020211001001402/images/home/girl3.jpg HTTP/1.1" 200 124440 http-bio-8080-exec-2 20
+0:0:0:0:0:0:0:1 - - [16/May/2022:15:29:11 +0800] "GET /WangKexin2020211001001402/images/home/girl1.jpg HTTP/1.1" 200 133812 http-bio-8080-exec-6 206
+0:0:0:0:0:0:0:1 - - [16/May/2022:15:29:11 +0800] "GET /WangKexin2020211001001402/images/home/pricing.png HTTP/1.1" 200 10268 http-bio-8080-exec-9 33
+0:0:0:0:0:0:0:1 - - [16/May/2022:15:29:11 +0800] "GET /WangKexin2020211001001402/images/home/girl2.jpg HTTP/1.1" 200 144294 http-bio-8080-exec-10 27
+0:0:0:0:0:0:0:1 - - [16/May/2022:15:29:12 +0800] "GET /WangKexin2020211001001402/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 77160 http-bio-8080-exec-10 6
+0:0:0:0:0:0:0:1 - - [16/May/2022:15:29:13 +0800] "GET /WangKexin2020211001001402/images/ico/favicon.ico HTTP/1.1" 404 1047 http-bio-8080-exec-10 5

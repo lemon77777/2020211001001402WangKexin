@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
                 //use httpSession for session
                 HttpSession session = request.getSession();//create session if session not exist -- otherwise return existing session
                 System.out.println("sessionId --->"+session.getId());//check
-                session.setMaxInactiveInterval(10);
+                session.setMaxInactiveInterval(30);
                 //change request(one page) to session -- can get session attribute in many jsp
                 session.setAttribute("user",users);
                 //request.setAttribute("user", users);
