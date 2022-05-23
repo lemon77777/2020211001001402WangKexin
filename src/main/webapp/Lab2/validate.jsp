@@ -15,7 +15,7 @@
    //todo 3: use if check username is admin and ppassword is admin
     if (Login.getUsername().equals("admin")&&Login.getPassword().equals("admin")) {
         HttpSession loginSession = request.getSession();
-        session.setAttribute("login",Login);
+        loginSession.setAttribute("login",Login);
 %>
     <%--todo 4: use jsp:forward to welcome.jsp page--%>
 <jsp:forward page="welcome.jsp"></jsp:forward>
@@ -24,8 +24,7 @@
 // todo 6: print username or password error message
     }
     else {
-    PrintWriter writer = response.getWriter();
-    writer.println("username or password error");
+    out.println("username or password error");
 %>
     <%--todo 7: use jsp:include login.jsp page --%>
 <jsp:include page="login.jsp"></jsp:include>

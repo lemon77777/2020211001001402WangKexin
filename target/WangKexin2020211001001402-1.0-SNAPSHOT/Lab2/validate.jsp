@@ -9,12 +9,13 @@
 <%--Todo 1: Use <jsp:useBean> to create a Login bean instance in request scope --%>
 <jsp:useBean id="Login" class="com.Lab2.Login" scope="request"></jsp:useBean>
     <%--Todo 2: Use <jsp:setProperty> to set  beans' property username and password--%>
-<jsp:setProperty name="Login" property="username" value="<%=request.getParameter("username")%>"></jsp:setProperty>
-<jsp:setProperty name="Login" property="password" value="<%=request.getParameter("password")%>"></jsp:setProperty>
+<jsp:setProperty name="Login" property="username" value="<%=request.getParameter(\"username\")%>"></jsp:setProperty>
+<jsp:setProperty name="Login" property="password" value="<%=request.getParameter(\"password\")%>"></jsp:setProperty>
 <%
    //todo 3: use if check username is admin and ppassword is admin
-    Login login = new Login();
-    if (login.getUsername().equals("admin")&&login.getPassword().equals("admin")) {
+    if (Login.getUsername().equals("admin")&&Login.getPassword().equals("admin")) {
+        HttpSession loginSession = request.getSession();
+        loginSession.setAttribute("login",Login);
 %>
     <%--todo 4: use jsp:forward to welcome.jsp page--%>
 <jsp:forward page="welcome.jsp"></jsp:forward>
@@ -23,8 +24,7 @@
 // todo 6: print username or password error message
     }
     else {
-    PrintWriter writer = response.getWriter();
-    writer.println("username or password error");
+    out.println("username or password error");
 %>
     <%--todo 7: use jsp:include login.jsp page --%>
 <jsp:include page="login.jsp"></jsp:include>
