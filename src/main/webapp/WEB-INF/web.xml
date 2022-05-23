@@ -57,4 +57,12 @@
   <welcome-file-list>
     <welcome-file>home</welcome-file>
   </welcome-file-list>
+  <filter>
+    <filter-name>WangKexinFilter</filter-name>
+    <filter-class>com.Lab2.WangKexinFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>WangKexinFilter</filter-name>
+    <url-pattern>/Lab2/welcome.jsp</url-pattern>
+  </filter-mapping>
 </web-app>

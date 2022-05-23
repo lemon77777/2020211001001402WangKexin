@@ -63,7 +63,7 @@ public class AddProductServlet extends HttpServlet {
         try {
             i = productDao.save(product,con);
             if (i>0){
-                // response.sendRedirect("productList");
+                 response.sendRedirect("productList");
             }
         } catch (SQLException e) {
             e.printStackTrace();

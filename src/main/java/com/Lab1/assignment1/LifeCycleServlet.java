@@ -1,4 +1,4 @@
-package com.WangKexin.Lab1;
+package com.Lab1.assignment1;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +10,7 @@ import java.io.IOException;
 @WebServlet("/LifeCycleServlet")
 public class LifeCycleServlet extends HttpServlet {
     public LifeCycleServlet() {
-        System.out.println("i am from default constructor");
+        System.out.println("i am from default constructor ");
     }
 
     @Override
