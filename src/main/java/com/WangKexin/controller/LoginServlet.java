@@ -61,7 +61,8 @@ public class LoginServlet extends HttpServlet {
                 //change request(one page) to session -- can get session attribute in many jsp
                 session.setAttribute("user",users);
                 //request.setAttribute("user", users);
-                request.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(request,response);
+                //request.getRequestDispatcher("WEB-INF/views/accountDetails.jsp").forward(request,response);
+                request.getRequestDispatcher("accountDetails").forward(request,response);
             } else {
                 request.setAttribute("message","Username or Password Error!");
                 request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);

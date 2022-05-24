@@ -9,22 +9,22 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Update User Info</h2>
-<% if(!(request.getAttribute("user")==null)){
+<% if(!(session.getAttribute("user")==null)){
     
    com.WangKexin.model.Users u = (com.WangKexin.model.Users)request.getAttribute("user");
 %>
-<%if(!(request.getAttribute("message")==null)){
-    out.println("<h3>"+request.getAttribute("message")+"</h3>");
+<%if(!(request.getAttribute("updateFail")==null)){
+    out.println("<h3>"+request.getAttribute("updateFail")+"</h3>");
 }%>
 <form method="post" action="updateUser">
    <label>Username : </label> <input type="text" name="username" placeholder="Username" value="<%=u.getUsername()%>"/>
     <label>Password : </label><input type="text" name="password" placeholder="password" value="<%=u.getPassword()%>"/>
     <label>Email : </label><input type="text" name="email" placeholder="Email" value="<%=u.getEmail()%>"/><br/>
  	<label> Gender </label>
- 	 &nbsp;<input type="radio"  style="width: 15px; height: 15px; display:inline;" name="gender" value="male" <%="male".equals(u.getGender())? "checked":""%> />&nbsp;Male&nbsp;
- 	<input type="radio" style="width: 15px; height: 15px;   display: inline;" name="gender" value="female" <%="female".equals(u.getGender())? "checked":""%>/>&nbsp;Female
+ 	 &nbsp;<input type="radio"  style="width: 15px; height: 15px; display:inline;" name="gender" value="male" <%="Male".equals(u.getGender())? "checked":""%> />&nbsp;Male&nbsp;
+ 	<input type="radio" style="width: 15px; height: 15px;   display: inline;" name="gender" value="female" <%="Female".equals(u.getGender())? "checked":""%>/>&nbsp;Female
  	<br/><br/>
-   <label>Date of Birth : </label><input type="text" name="birthdate" placeholder="Date of Birth (yyyy-mm-dd)" value="<%=u.getBirth()%>" />
+   <label>Date of Birth : </label><input type="text" name="birth" placeholder="Date of Birth (yyyy-mm-dd)" value="<%=u.getBirth()%>" />
    <input type="hidden" name="id" value="<%=u.getId()%>">
     <button type="submit" class="btn btn-default">Save Changes</button>
     <%}%>

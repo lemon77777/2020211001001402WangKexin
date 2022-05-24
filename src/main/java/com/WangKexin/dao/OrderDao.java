@@ -115,7 +115,7 @@ public class OrderDao implements IOrderDao {
 			while(rs.next()){
 				Order o=new Order();
 				o.setOrderId(rs.getInt("OrderID"));
-				o.setCustomerId(rs.getInt("CustomerID"));
+				o.setCustomerId(rs.getInt("id"));
 				o.setPaymentId(rs.getInt("PaymentID"));
 				o.setOrderDate(rs.getTimestamp("OrderDate"));
 				o.setFirstName(rs.getString("FirstName"));
@@ -143,7 +143,7 @@ public class OrderDao implements IOrderDao {
 	}
 	@Override 
 	public List<Order> findByUserId(Connection con,Object CustomerID) {
-		return findByProperty(con,"CustomerID", CustomerID);
+		return findByProperty(con,"id", CustomerID);
 	}
 
 	@Override 
@@ -238,10 +238,10 @@ public class OrderDao implements IOrderDao {
 			while(rs.next()){
 				Item i=new Item();
 				Product p=new Product();
-				p.setProductID(rs.getInt("ProductId"));
+				p.setProductID(rs.getInt("ProductID"));
 				p.setPrice(rs.getDouble("price"));
 				p.setProductName(rs.getString("productName"));
-				i.setQuantity(rs.getInt("quantity"));
+				i.setQuantity(rs.getInt("Quantity"));
 				i.setProduct(p);
 				itemList.add(i);
 			}

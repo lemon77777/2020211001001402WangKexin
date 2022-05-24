@@ -14,8 +14,6 @@
 <%
    //todo 3: use if check username is admin and ppassword is admin
     if (Login.getUsername().equals("admin")&&Login.getPassword().equals("admin")) {
-        HttpSession loginSession = request.getSession();
-        loginSession.setAttribute("login",Login);
 %>
     <%--todo 4: use jsp:forward to welcome.jsp page--%>
 <jsp:forward page="welcome.jsp"></jsp:forward>

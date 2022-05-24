@@ -52,11 +52,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<tr>
 						
 							<td class="cart_product">
-								<a href=""><img src="<%=basePath%>getImg?id=${i.product.productId}" alt="" style="border: 1px solid #F7F7F0; height: 100px;width: 80px;"></a>
+								<a href=""><img src="<%=basePath%>getImg?id=${i.product.productID}" alt="" style="border: 1px solid #F7F7F0; height: 100px;width: 80px;"></a>
 							</td>
 							<td class="cart_description">
 								<h4>${ i.product.productName}</h4>
-								<p>Web ID: ${ i.product.productId}</p>
+								<p>Web ID: ${ i.product.productID}</p>
 							</td>
 								<td class="cart_price">
 								<p>${ i.product.price}</p>

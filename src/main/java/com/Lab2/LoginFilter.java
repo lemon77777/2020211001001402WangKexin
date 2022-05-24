@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebFilter(filterName = "LoginFilter",urlPatterns = {"/Lab2/validation.jsp","/Lab2/welcome.jsp"})
+//if filter validate,it will loop redirect to login.jsp
 public class LoginFilter implements Filter {
     public void destroy() {
         System.out.println("i am in LoginFilter--destroy()");
@@ -16,8 +17,7 @@ public class LoginFilter implements Filter {
         System.out.println("i am in LoginFilter--doFilter()-- request before chain()");
         HttpServletRequest request= (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
-        if (request.getSession(false)!=null&&request.getSession(false).getAttribute("login")!=null) {
-            System.out.println(request.getSession(false).getAttribute("login"));
+        if (request.getSession(false)!=null&&request.getSession(false).isNew()) {
             request.getRequestDispatcher("/Lab2/welcome.jsp").forward(request,response);
         } else {
             response.sendRedirect("login.jsp");
