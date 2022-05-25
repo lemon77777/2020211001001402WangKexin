@@ -20,7 +20,7 @@ public class LoginFilter implements Filter {
         if (request.getSession(false)!=null&&request.getSession(false).isNew()) {
             request.getRequestDispatcher("/Lab2/welcome.jsp").forward(request,response);
         } else {
-            response.sendRedirect("login.jsp");
+            response.sendRedirect(request.getContextPath()+"/Lab2/login.jsp");
             return;//to resolve the error java.lang.IllegalStateException
         }
         chain.doFilter(req, resp);
