@@ -202,7 +202,7 @@ public class OrderDao implements IOrderDao {
 			while(rs.next()){
 				Order o=new Order();
 				o.setOrderId(rs.getInt("OrderID"));
-				o.setCustomerId(rs.getInt("CustomerID"));
+				o.setCustomerId(rs.getInt("id"));
 				o.setPaymentId(rs.getInt("PaymentID"));
 				o.setOrderDate(rs.getTimestamp("OrderDate"));
 				o.setFirstName(rs.getString("FirstName"));

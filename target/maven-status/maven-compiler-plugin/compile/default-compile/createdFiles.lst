@@ -24,6 +24,7 @@ com\WangKexin\controller\productDetailServlet.class
 com\WangKexin\controller\AddProductServlet.class
 com\WangKexin\controller\GetImgServlet.class
 com\WangKexin\dao\IProductDao.class
+com\WangKexin\controller\ContactUsServlet.class
 com\WangKexin\controller\LoginServlet.class
 com\WangKexin\model\Users.class
 com\WangKexin\model\Product.class
@@ -42,3 +43,4 @@ com\WangKexin\controller\ShopServlet.class
 com\Lab3\CalServlet.class
 com\Lab1\assignment1\Method1countServlet.class
 com\Lab2\WangKexinFilter.class
+com\WangKexin\controller\AdminOrderListServlet.class
