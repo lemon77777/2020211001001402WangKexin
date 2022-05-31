@@ -4,6 +4,7 @@ D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\mo
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\dao\IOrderDao.java
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\week2\LoginServlet.java
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\week2\mapper\UserMapper.java
+D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\controller\AdminOrderListServlet.java
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\controller\LoginServlet.java
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\dao\ProductDao.java
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\controller\CartServlet.java
@@ -27,6 +28,7 @@ D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\Lab1\assignm
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\week3\LifeCycleServlet.java
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\dao\IUserDao.java
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\model\Product.java
+D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\controller\ContactUsServlet.java
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\model\Order.java
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\week5\LoginServlet.java
 D:\ideaIU 2019\mavenWeb\2020211001001402WangKexin\src\main\java\com\WangKexin\week2\pojo\User.java
