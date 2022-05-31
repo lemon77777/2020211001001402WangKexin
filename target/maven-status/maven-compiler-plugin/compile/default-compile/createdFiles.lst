@@ -22,6 +22,7 @@ com\WangKexin\week2\pojo\User.class
 com\WangKexin\week2\RegisterServlet.class
 com\WangKexin\controller\productDetailServlet.class
 com\WangKexin\controller\AddProductServlet.class
+com\WangKexin\controller\userEditServlet.class
 com\WangKexin\controller\GetImgServlet.class
 com\WangKexin\dao\IProductDao.class
 com\WangKexin\controller\ContactUsServlet.class
@@ -41,6 +42,7 @@ com\WangKexin\dao\UserDao.class
 com\WangKexin\controller\OrderServlet.class
 com\WangKexin\controller\ShopServlet.class
 com\Lab3\CalServlet.class
+com\WangKexin\controller\userDeleteServlet.class
 com\Lab1\assignment1\Method1countServlet.class
 com\Lab2\WangKexinFilter.class
 com\WangKexin\controller\AdminOrderListServlet.class

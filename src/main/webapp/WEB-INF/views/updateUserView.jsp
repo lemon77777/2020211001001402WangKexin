@@ -1,6 +1,5 @@
 <%@ page import="com.WangKexin.model.Users" %>
 <%@ page import="java.util.List" %>
- 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="header.jsp"%>
 <section id="form"><!--form-->
@@ -16,7 +15,7 @@
 <%if(!(request.getAttribute("updateFail")==null)){
     out.println("<h3>"+request.getAttribute("updateFail")+"</h3>");
 }%>
-<form method="post" action="updateUser">
+<form method="post" action="<%=request.getContextPath()+"/updateUser"%>">
    <label>Username : </label> <input type="text" name="username" placeholder="Username" value="<%=u.getUsername()%>"/>
     <label>Password : </label><input type="text" name="password" placeholder="password" value="<%=u.getPassword()%>"/>
     <label>Email : </label><input type="text" name="email" placeholder="Email" value="<%=u.getEmail()%>"/><br/>
