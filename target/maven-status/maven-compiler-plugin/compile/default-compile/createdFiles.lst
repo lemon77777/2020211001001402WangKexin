@@ -22,7 +22,6 @@ com\WangKexin\week2\pojo\User.class
 com\WangKexin\week2\RegisterServlet.class
 com\WangKexin\controller\productDetailServlet.class
 com\WangKexin\controller\AddProductServlet.class
-com\WangKexin\controller\userEditServlet.class
 com\WangKexin\controller\GetImgServlet.class
 com\WangKexin\dao\IProductDao.class
 com\WangKexin\controller\ContactUsServlet.class
